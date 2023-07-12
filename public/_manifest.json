@@ -1,11 +1,11 @@
 {
 "version": "1.2",
 "lang" : "en",
-"name" : "PayApp",
+"name" : "finApp",
 "scope" : "/",
 "display" : "fullscreen",
 "start_url" : "/index.html",
-"short_name" : "PayApp",
+"short_name" : "finApp",
 "description" : "",
 "orientation" : "portrait",
 "background_color": "#000000",
