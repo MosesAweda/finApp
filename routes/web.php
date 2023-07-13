@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,4 @@ Route::post('/signup', [AuthController::class, 'signup'])->name('signup.post');
 Route::get('/', [AuthController::class, 'showSigninForm'])->name('signin');
 Route::get('/signin', [AuthController::class, 'showSigninForm'])->name('signin');
 Route::post('/signin', [AuthController::class, 'signin'])->name('signin.post');
+Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name('dashboard');

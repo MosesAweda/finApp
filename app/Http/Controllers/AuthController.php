@@ -17,14 +17,20 @@ class AuthController extends Controller
     {
         // Validate user input
         $request->validate([
-            'name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:6',
+            'password_confirmation' => 'required|string|same:password',
+            'terms' => 'required',
         ]);
-    
+
+      
         // Create new user
         $user = new User();
-        $user->name = $request->input('name');
+      
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
         $user->save();
@@ -47,7 +53,7 @@ class AuthController extends Controller
         ]);
     
         // Attempt to authenticate the user
-        if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+        if (\Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             // Authentication successful
             return redirect('/dashboard');
         } else {

@@ -39,7 +39,7 @@
             <div class="page-title d-flex">
                 <div class="align-self-center me-auto">
                     <p class="color-highlight header-date"></p>
-                    <h1>Welcome</h1>
+                    <h1>Welcome {{ $user->first_name}}</h1>
                 </div>
                 <div class="align-self-center ms-auto">
                     <a href="#"

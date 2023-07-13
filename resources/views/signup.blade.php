@@ -90,7 +90,7 @@
           </div>
           @enderror
 
-          @error('username')
+          @error('first_name')
     
           <div class="alert alert-danger alert-dismissible fade show rounded-2">
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -100,7 +100,7 @@
 
 
 
-          @error('name')
+          @error('last_name')
     
           <div class="alert alert-danger alert-dismissible fade show rounded-2">
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -116,6 +116,24 @@
     </div>
     @enderror
 
+    @error('password_confirmation')
+    
+    <div class="alert alert-danger alert-dismissible fade show rounded-2">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong> Passwords don't match!</strong>  
+    </div>
+    @enderror
+
+
+
+
+    @error('terms')
+    
+    <div class="alert alert-danger alert-dismissible fade show rounded-2">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong> You have not accepted our terms</strong>  
+    </div>
+    @enderror
 
 
 
@@ -123,15 +141,26 @@
 
                <p>
                    Create a 79-Wallet Account
-               </p>
+               </p> action="{{ route('signup.post') }}"
                <form action="{{ route('signup.post') }}" method="post">
                 @csrf
                <div class="form-custom form-label form-border form-icon mb-3 bg-transparent">
                    <i class="bi bi-person-circle font-13"></i>
-                   <input  name="name" type="text" class="form-control rounded-xs" id="c1" placeholder="Username"/>
-                   <label for="c1" class="color-theme">Name</label>
+                   <input  name="first_name" type="text" class="form-control
+                    rounded-xs" id="c1" placeholder="First Name"/>
+                   <label for="c1" class="color-theme">First Name</label>
                    <span>(required)</span>
                </div>
+
+
+               <div class="form-custom form-label form-border form-icon mb-3 bg-transparent">
+                <i class="bi bi-person-circle font-13"></i>
+                <input  name="last_name" type="text" class="form-control rounded-xs"
+                 id="c1" placeholder="Last Name"/>
+                <label for="c1" class="color-theme">Last Name</label>
+                <span>(required)</span>
+            </div>
+
                <div class="form-custom form-label form-border form-icon mb-3 bg-transparent">
                    <i class="bi bi-at font-16"></i>
                    <input name="email" type="email" class="form-control rounded-xs" id="c1" placeholder="Email Address"/>
@@ -146,24 +175,26 @@
                </div>
                <div class="form-custom form-label form-border form-icon mb-4 bg-transparent">
                    <i class="bi bi-asterisk font-13"></i>
-                   <input type="password" class="form-control rounded-xs" id="c3" placeholder="Confirm Password"/>
-                   <label for="c3" class="color-theme">Choose Password</label>
+                   <input name="password_confirmation" type="password" class="form-control rounded-xs" id="c3" placeholder="Confirm Password"/>
+                   <label for="c3" class="color-theme">Confirm Password</label>
                    <span>(required)</span>
                </div>
                <div class="form-check form-check-custom">
-                   <input class="form-check-input" type="checkbox" name="type" value="" id="c2a">
+                   <input  name="terms"  class="form-check-input" type="checkbox" name="type" 
+                   value="terms" id="c2a">
                    <label class="form-check-label font-12" for="c2a">I agree with the <a href="#">Terms and Conditions</a>.</label>
                    <i class="is-checked color-highlight font-13 bi bi-check-circle-fill"></i>
                    <i class="is-unchecked color-highlight font-13 bi bi-circle"></i>
                </div>
                
                <div class="d-grid">
-               <input   type="submit"  value="Create Personal Account"  class="btn btn-full gradient-highlight shadow-bg shadow-bg-s mt-4">
+               <input   type="submit"  value="Create Personal Account"  
+               class="btn btn-full gradient-highlight shadow-bg shadow-bg-s mt-4">
                <input   type="submit" value="Create Business Account"  class="btn btn-full btn-block  gradient-highlight2 shadow-bg shadow-bg-s mt-4">
                </div>
                <div class="row">
                    <div class="col-6 text-start">
-                       <a href="page-forgot-1.html" class="font-11 color-theme opacity-40 pt-4 d-block">Forgot Password?</a>
+                       {{-- <a href="page-forgot-1.html" class="font-11 color-theme opacity-40 pt-4 d-block">Forgot Password?</a> --}}
                    </div>
                    <div class="col-6 text-end">
                        <a href="{{route('signin')}}" class="font-11 color-theme opacity-40 pt-4 d-block">Sign In Account</a>

@@ -70,9 +70,28 @@
           </div>
             
      @endif
+
+     @if(Session::has('error'))
+     <div class="alert alert-info alert-dismissible fade show">
+         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+         <strong> {{ Session::get('success') }}</strong>  
+       </div>
+         
+  @endif
+
+
+ 
+
           </div>
+
+
+
+
+          
           </div>
     
+          <form  action="{{ route('signin.post') }}" method="post">
+            @csrf
        <div class="card card-style">
            <div class="content">
                <h1 class="mb-0 pt-2">Sign In</h1>
@@ -81,13 +100,13 @@
                </p>
                <div class="form-custom form-label form-border form-icon mb-3 bg-transparent">
                    <i class="bi bi-person-circle font-13"></i>
-                   <input  name="username" type="text" class="form-control rounded-xs" id="c1" placeholder="Username"/>
-                   <label for="c1" class="color-theme">Username</label>
+                   <input  name="email" type="email" class="form-control rounded-xs" id="c1" placeholder="Username"/>
+                   <label for="c1" class="color-theme">Email</label>
                    <span>(required)</span>
                </div>
                <div class="form-custom form-label form-border form-icon mb-4 bg-transparent">
                    <i class="bi bi-asterisk font-13"></i>
-                   <input name="pswd" type="password" class="form-control rounded-xs" id="c2" placeholder="Password"/>
+                   <input name="password" type="password" class="form-control rounded-xs" id="c2" placeholder="Password"/>
                    <label for="c2" class="color-theme">Password</label>
                    <span>(required)</span>
                </div>
@@ -97,7 +116,7 @@
                    <i class="is-checked color-highlight font-13 bi bi-check-circle-fill"></i>
                    <i class="is-unchecked color-highlight font-13 bi bi-circle"></i>
                </div>
-               <a href="index.html" class="btn btn-full gradient-highlight shadow-bg shadow-bg-s mt-4">SIGN IN</a>
+               <input type="submit"  class="btn btn-full gradient-highlight shadow-bg shadow-bg-s mt-4">
                <div class="row">
                    <div class="col-6 text-start">
                        <a href="page-forgot-2.html" class="font-11 color-theme opacity-40 pt-4 d-block">Forgot Password?</a>
@@ -108,6 +127,7 @@
                </div>
            </div>
        </div>
+          </form>
 
     </div>
     <!-- End of Page Content-->
