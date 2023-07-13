@@ -4,7 +4,7 @@
 "name" : "finApp",
 "scope" : "/",
 "display" : "fullscreen",
-"start_url" : "/index.html",
+"start_url" : "/",
 "short_name" : "finApp",
 "description" : "",
 "orientation" : "portrait",
@@ -13,7 +13,7 @@
 "generated" : "true",
   "icons": [
     {
-      "src": "app/icons/icon-72x72.png",
+      "src": "app/icons/logo.png",
       "sizes": "72x72",
       "type": "image/png"
     },

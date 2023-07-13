@@ -141,8 +141,8 @@
 
                <p>
                    Create a 79-Wallet Account
-               </p> action="{{ route('signup.post') }}"
-               <form action="{{ route('signup.post') }}" method="post">
+               </p> 
+               <form action="{{ route('signup.post') }}"  method="post">
                 @csrf
                <div class="form-custom form-label form-border form-icon mb-3 bg-transparent">
                    <i class="bi bi-person-circle font-13"></i>

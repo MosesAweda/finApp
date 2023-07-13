@@ -70,7 +70,7 @@
                                     <i class="has-bg gradient-yellow shadow-bg shadow-bg-xs color-white rounded-xs bi bi-person-circle"></i>
                                     <strong class="font-13">Account</strong>
                                 </a>
-                                <a href="page-signin-1.html" class="list-group-item">
+                                <a href="{{ route('logout') }}" class="list-group-item">
                                     <i class="has-bg gradient-red shadow-bg shadow-bg-xs color-white rounded-xs bi bi-power"></i>
                                     <strong class="font-13">Log Out</strong>
                                 </a>
@@ -322,7 +322,7 @@
     </div>
 
     <!-- Transfer Button Menu -->
-    <div id="menu-transfer" data-menu-load="menu-transfer.html"
+    <div id="menu-transfer" data-menu-load="{{route('menu-transfer')}}"
         class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
     </div>
 
